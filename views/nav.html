@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nav</title>
+    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#"><span>Daniella</span>Admin</a>
+                <ul class="user-menu">
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> User <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar collapse in">
+                <ul class="nav" id="side-menu">
+                        <li class="side-menu-item"><a href=""><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+                        <li class="side-menu-item" data-toggle="collapse"  href="#collapseOne" data-parent="#side-menu"><span class="glyphicon glyphicon-th"></span> Widgets</li>
+                            <ul id="collapseOne" class="subMenu">
+                                <li>sub-menu1</li>
+                                <li>sub-menu2</li>
+                                <li>sub-menu3</li>
+                            </ul>
+                        <li class="side-menu-item" ><a href=""><span class="glyphicon glyphicon-stats"></span> Charts</a></li>
+                        <li class="side-menu-item" ><a href=""><span class="glyphicon glyphicon-list-alt"></span> Tables</a></li>
+                        <li class="side-menu-item" data-toggle="collapse"  href="#collapseTwo" data-parent="#side-menu"><span class="glyphicon glyphicon-pencil"></span> Forms</li>
+                            <ul id="collapseTwo" class="subMenu">
+                                <li>sub-menu1</li>
+                                <li>sub-menu2</li>
+                                <li>sub-menu3</li>
+                            </ul>
+                        <li class="side-menu-item" ><a href=""><span class="glyphicon glyphicon-stats"></span> Charts</a></li>
+                        <li class="side-menu-item" ><a href=""><span class="glyphicon glyphicon-list-alt"></span> Tables</a></li>
+
+                    </ul>
+            </div>
+    </div>
+</nav>
+
+
+
+
+<script src="../libs/bootstrap/js/jquery-3.1.1.min.js"></script>
+<script src="../libs/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
