@@ -31,30 +31,90 @@
                 </ul>
             </div>
 
-            <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar collapse in">
+            <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar collapse">
                 <ul class="nav" id="side-menu">
-                        <li class="side-menu-item"><a href=""><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
-                        <li class="side-menu-item" data-toggle="collapse"  href="#collapseOne" data-parent="#side-menu"><span class="glyphicon glyphicon-th"></span> Widgets</li>
-                            <ul id="collapseOne" class="subMenu">
+                        <li class="side-menu-item">
+                            <a>
+                                <span class="glyphicon glyphicon-dashboard padding-right_10"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="side-menu-item" data-toggle="collapse"  href="#collapseOne" data-parent="#side-menu" aria-expanded="true" aria-controls="collapseOne">
+                            <a >
+                                <span class="glyphicon glyphicon-th padding-right_10"></span>
+                                Widgets
+                                <span class="glyphicon glyphicon-menu-right sub-menu-item-caret"></span>
+                            </a>
+                        </li>
+                        <div id="collapseOne" class="collapse in ">
+                            <ul class="subMenu">
                                 <li>sub-menu1</li>
                                 <li>sub-menu2</li>
                                 <li>sub-menu3</li>
                             </ul>
-                        <li class="side-menu-item" ><a href=""><span class="glyphicon glyphicon-stats"></span> Charts</a></li>
-                        <li class="side-menu-item" ><a href=""><span class="glyphicon glyphicon-list-alt"></span> Tables</a></li>
-                        <li class="side-menu-item" data-toggle="collapse"  href="#collapseTwo" data-parent="#side-menu"><span class="glyphicon glyphicon-pencil"></span> Forms</li>
-                            <ul id="collapseTwo" class="subMenu">
+                        </div>
+                        <li class="side-menu-item" >
+                            <a>
+                                <span class="glyphicon glyphicon-stats padding-right_10"></span>
+                                Charts
+                            </a>
+                        </li>
+                        <li class="side-menu-item" >
+                            <a>
+                                <span class="glyphicon glyphicon-list-alt padding-right_10"></span>
+                                Tables
+                            </a>
+                        </li>
+                        <li class="side-menu-item " data-toggle="collapse"  href="#collapseTwo" data-parent="#side-menu" aria-expanded="true" aria-controls="collapseOne">
+                            <a >
+                                <span class="glyphicon glyphicon-pencil padding-right_10"></span>
+                                Forms
+                                <span class="glyphicon glyphicon-menu-right sub-menu-item-caret"></span>
+                            </a>
+                        </li>
+                        <div id="collapseTwo" class="collapse in">
+                            <ul class="subMenu">
                                 <li>sub-menu1</li>
                                 <li>sub-menu2</li>
                                 <li>sub-menu3</li>
                             </ul>
-                        <li class="side-menu-item" ><a href=""><span class="glyphicon glyphicon-stats"></span> Charts</a></li>
-                        <li class="side-menu-item" ><a href=""><span class="glyphicon glyphicon-list-alt"></span> Tables</a></li>
+                        </div>
+                        <li class="side-menu-item" >
+                            <a>
+                                <span class="glyphicon glyphicon-stats padding-right_10"></span>
+                                Charts
+                            </a>
+                        </li>
+                        <li class="side-menu-item" >
+                            <a >
+                                <span class="glyphicon glyphicon-list-alt padding-right_10"></span>
+                                Tables
+                            </a>
+                        </li>
 
                     </ul>
             </div>
     </div>
 </nav>
+
+<div class="container-fluid">
+    <div class="row content">
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+
+        <div class="col-xs-12 ">
+            <div class="page">
+                <div class="page-header">
+                    <h2>This is Content</h2>
+                    <small> this area just for your content</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
