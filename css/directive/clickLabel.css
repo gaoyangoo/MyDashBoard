@@ -1,0 +1,36 @@
+.click-label{
+    position:relative;
+    font-size: 15px;
+    padding: 5px 15px 5px 10px;
+    color:#000;
+    height: 35px;
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #af9696;
+    float: left;
+    margin: 0 10px 0 10px;
+}
+.click-label:hover{
+    box-shadow: 1px 2px 1px #af9696;
+}
+.selected{
+    border:1px solid #179c3d;
+    border-radius: 4px;
+}
+.close {
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: #FF0000;
+    opacity: 1;
+    font-size: 14px;
+    border: 2px solid #000000;
+    -webkit-border-radius: 33px;
+    -moz-border-radius: 33px;
+    border-radius: 33px;
+    z-index: 10;
+}
