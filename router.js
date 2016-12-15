@@ -2,10 +2,14 @@
  * Created by alex on 2016/12/4.
  */
 myApp.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("nav");
+    $urlRouterProvider.otherwise("index");
     $stateProvider
-        .state("nav", {
-            url: "/nav",
+        .state("index", {
+            url: "/index",
             templateUrl: "views/nav.html"
+        })
+        .state("index.home", {
+            url: "/home",
+            templateUrl: "views/home.html"
         });
 });

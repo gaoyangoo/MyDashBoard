@@ -1,0 +1,29 @@
+.banner{
+    height:500px;
+    background-size: cover;
+    transition: opacity 200ms ease-in-out;
+    background-image:url("http://hbfile.b0.upaiyun.com/img/home/banner/ae28b900fda7f5f4975dd9e13f628150ed627e7c1036e2") ;
+}
+.banner h2{
+    margin-top: 140px;
+    margin-bottom: 40px;
+    font-size: 40px;
+    color: #ffffff;
+}
+.banner input{
+    border: 1px solid #eee;
+    background: rgba(0,0,0,.15);
+}
+.banner input:hover{
+    border: 1px solid #ffffff;
+}
+.banner .go{
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 15px;
+    width: 40px;
+    height: 36px;
+    background: url("http://huaban.com/img/new_index/icon_search.svg") 9px 7px no-repeat;
+    cursor: pointer
+}

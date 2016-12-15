@@ -1,91 +1,81 @@
-<nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- small size page header content-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#largeSizeHeader" aria-expanded="false">
+                <span class="sr-only">Alex</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="" ui-sref=".home">
+                <svg aria-hidden="true" class="octicon octicon-mark-github" height="28" version="1.1" viewBox="0 0 16 16" width="28">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+            </a>
+        </div>
 
-                <a class="navbar-brand" href="#"><span>Daniella</span>Admin</a>
-                <ul class="user-menu">
-                    <li class="dropdown pull-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> User <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+        <!-- large size page header content-->
+        <div class="collapse navbar-collapse" id="largeSizeHeader">
+            <ul class="nav navbar-nav">
+                <li><a>BootStrap<span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Angular<span class="sr-only">(current)</span></a></li>
 
-            <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar collapse in">
-                <div class="sub-menu-img">
-                    <img class ="img-circle user-pic-size" src="assert/img/logo.jpg" alt="pic">
-                </div>
-                <ul class="nav" id="side-menu">
-                        <li class="side-menu-item">
-                            <a>
-                                <span class="glyphicon glyphicon-dashboard padding-right_15"></span>
-                                Dashboard
-                            </a>
-                        </li>
-                        <li class="side-menu-item" data-toggle="collapse"  href="#collapseOne" data-parent="#side-menu" aria-expanded="true" aria-controls="collapseOne">
-                            <a >
-                                <span class="glyphicon glyphicon-th padding-right_15"></span>
-                                Widgets
-                                <span class="glyphicon glyphicon-menu-right sub-menu-item-caret"></span>
-                            </a>
-                        </li>
-                        <div id="collapseOne" class="collapse">
-                            <ul class="subMenu">
-                                <li>sub-menu1</li>
-                                <li>sub-menu2</li>
-                                <li>sub-menu3</li>
-                            </ul>
-                        </div>
-                        <li class="side-menu-item" >
-                            <a>
-                                <span class="glyphicon glyphicon-stats padding-right_15"></span>
-                                Charts
-                            </a>
-                        </li>
-                        <li class="side-menu-item" >
-                            <a>
-                                <span class="glyphicon glyphicon-list-alt padding-right_15"></span>
-                                Tables
-                            </a>
-                        </li>
-                        <li class="side-menu-item " data-toggle="collapse"  href="#collapseTwo" data-parent="#side-menu" aria-expanded="true" aria-controls="collapseOne">
-                            <a >
-                                <span class="glyphicon glyphicon-pencil padding-right_15"></span>
-                                Forms
-                                <span class="glyphicon glyphicon-menu-right sub-menu-item-caret"></span>
-                            </a>
-                        </li>
-                        <div id="collapseTwo" class="collapse">
-                            <ul class="subMenu">
-                                <li>sub-menu1</li>
-                                <li>sub-menu2</li>
-                                <li>sub-menu3</li>
-                            </ul>
-                        </div>
-                        <li class="side-menu-item" >
-                            <a>
-                                <span class="glyphicon glyphicon-stats padding-right_15"></span>
-                                Charts
-                            </a>
-                        </li>
-                        <li class="side-menu-item" >
-                            <a >
-                                <span class="glyphicon glyphicon-list-alt padding-right_15"></span>
-                                Tables
-                            </a>
-                        </li>
-
+                <!-- founder ui element start-->
+                <li class="dropdown">
+                    <a href="#" type="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Gy-Directive <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Click-Label</a></li>
+                        <li><a href="">Alert-Input</a></li>
+                        <li class="divider" role="separator"></li>
+                        <li><a href="">Loading...</a></li>
                     </ul>
-            </div>
+                </li>
+                <!-- founder ui element end-->
+
+                <!-- self design directive start-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Interactive<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Form validate</a></li>
+                        <li><a href="#">File upload</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">DownLoad</a></li>
+                    </ul>
+                </li>
+                <!-- self design directive end-->
+                </li>
+
+            </ul>
+
+
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">alexandsnow<span class="caret"></span> </a>
+                    <ul class="dropdown-menu">
+                        <li class="text-center"><img class="img-circle" src="https://avatars2.githubusercontent.com/u/16744991?v=3&amp;s=60" width="50" height="50"></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Setting</a></li>
+                        <li class="divider" role="separator"></li>
+                        <li><a href="#">LogOut</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </form>
+
+
+
+
+        </div>
+
     </div>
+
 </nav>
+<div data-ui-view>
+
+</div>
