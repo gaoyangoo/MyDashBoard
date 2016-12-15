@@ -33,8 +33,10 @@
     <div ng-controller="test1">
         <pre> {{selected}}</pre>
         <br>
+
+        <input type="checkbox" ng-model="isSelectAll">
         <div ng-repeat="tag in tags">
-            <to-controller class="click-label" name={{tag.tagName}} ng-click="select($index)"></to-controller>
+            <to-controller class="click-label" name={{tag.tagName}} ng-click="select($index)" ng-class="{'selected':isSelectAll}"                                                    ></to-controller>
             <pre> {{selected}}</pre>
         </div>
     </div>

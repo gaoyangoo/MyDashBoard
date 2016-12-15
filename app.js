@@ -8,6 +8,8 @@ myApp.controller("test",function($scope){
 });
 myApp.controller("test1",function($scope){
 
+    $scope.isSelectAll=false;
+
     $scope.tags=[
         {tagName:"日商1", tagValue:30,selected:false},
         {tagName:"日商2", tagValue:30,selected:false},
