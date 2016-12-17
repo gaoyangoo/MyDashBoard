@@ -48,6 +48,8 @@
 .Gy-blocks-item{
     height:75px;
     line-height:75px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     background-image: url("http://img.hb.aicdn.com/3922dc8a00b56bde008235ca618f21e02d2cc0eb28756-kKzIMU_sq236bl4");
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
