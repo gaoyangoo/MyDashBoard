@@ -1,4 +1,82 @@
 .navbar-default{
-    background-color: rgba(0,0,0,.0001);
-    border-color: rgba(0,0,0,.0001);
+    /*border-color: rgba(0,0,0,.0001);*/
+    /*position: absolute;*/
+    /*background: url("http://huaban.com/img/new_index/head_top_mask.png") repeat-x;*/
+}
+.navbar-brand{
+
+}
+.Gy-icon-left{
+    margin-right: 10px;
+}
+.Gy-blur{
+    opacity:0.9;
+}
+.Gy-box{
+    padding-top:20px;
+    background-color: #eeeeee;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.Gy-paragraph-separator{
+    padding: 20px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+}
+.Gy-paragraph-separator::before{
+    left:0;
+    display: block;
+    position: absolute;
+    top: 32px;
+    width: 44%;
+    content: "";
+    border-top: 1px solid #ededed;
+}
+.Gy-paragraph-separator::after{
+    right: 0;
+    display: block;
+    position: absolute;
+    top: 32px;
+    width: 44%;
+    content: "";
+    border-top: 1px solid #ededed;
+}
+.Gy-blocks-group {
+}
+.Gy-blocks-item{
+    height:75px;
+    line-height:75px;
+    background-image: url("//img.hb.aicdn.com/3922dc8a00b56bde008235ca618f21e02d2cc0eb28756-kKzIMU_sq236bl4");
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.Gy-block-title{
+    text-align: center;
+    font-size: 20px;
+    color:#ffffff;
+    height:75px;
+    font-weight:bolder;
+    cursor: pointer;
+}
+
+footer{
+    height:400px;
+    padding-top:50px;
+    margin-top: 50px;
+    background-color: #1fa67a;
+}
+footer ul{
+    width:400px;
+    height:65px;
+    list-style: none;
+    margin:0 auto;
+}
+footer ul li{
+    float: left;
+    margin-left: 20px;
+    font-size:40px;
+    list-style: none;
 }

@@ -11,11 +11,7 @@
     color: #ffffff;
 }
 .banner input{
-    border: 1px solid #eee;
     background: rgba(0,0,0,.15);
-}
-.banner input:hover{
-    border: 1px solid #ffffff;
 }
 .banner .go{
     position: absolute;
