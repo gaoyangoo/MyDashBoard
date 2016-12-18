@@ -1,0 +1,41 @@
+.login-title{
+    height:60px;
+    line-height: 60px;
+    background-color: #eeeeee;
+    border-bottom: 1px solid #37b837;
+    font-size:50px;
+    margin-bottom: 100px;
+}
+.login-title i{
+    margin-top: 10px;
+}
+.login-title i:hover{
+    margin-top:5px;
+    color:#1fa67a;
+}
+.checkbox{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+a:hover{
+    font-weight: bolder;
+    text-decoration: none;
+}
+label{
+    font-size: 13px;
+    font-weight: normal;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.Gy-icon-size{
+    font-size: 20px;
+}
+.footer{
+    height:60px;
+    width:100%;
+    line-height: 60px;
+    background-color: #eeeeee;
+    border-top: 1px solid #37b837;
+    position: absolute;
+    bottom:0;
+    right:0;
+}
