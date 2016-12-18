@@ -55,6 +55,9 @@
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
+.Gy-blocks-item a{
+    text-decoration: none;
+}
 .Gy-block-title{
     text-align: center;
     font-size: 20px;
