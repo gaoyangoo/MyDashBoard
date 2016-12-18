@@ -2,11 +2,11 @@
  * Created by alex on 2016/12/4.
  */
 myApp.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("bootstrap");
+    $urlRouterProvider.otherwise("/");
     $stateProvider
-        .state("index", {
+        .state("/", {
             url: "/",
-            templateUrl: "views/nav.html"
+            templateUrl: "views/BootstrapPages/Gy-bootstrap.html"
         })
         .state("bootstrap",{
             url:"/bootStrap",
