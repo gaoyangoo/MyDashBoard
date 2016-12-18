@@ -1,11 +1,24 @@
 .navbar-default{
     /*border-color: rgba(0,0,0,.0001);*/
-    /*position: absolute;*/
-    /*background: url("http://huaban.com/img/new_index/head_top_mask.png") repeat-x;*/
+    position: absolute;
+    background-color: #1fa67a;
 }
-.navbar-brand{
+.navbar-default .navbar-header .navbar-brand strong{
+    font-size: 20px;
+    color:#ffffff;
+    font-family: Helvetica, sans-serif;
+}
+.navbar-default .navbar-nav li a{
+    color:#000000;
+}
+.navbar-default .navbar-nav li a:hover{
+    color: #0f0f0f;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #555;
+    background-color: rgba(255,255,255,.15);
+}
 
-}
 .Gy-icon-left{
     margin-right: 10px;
 }
