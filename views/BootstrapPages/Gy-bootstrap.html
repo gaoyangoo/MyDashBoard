@@ -268,8 +268,123 @@
     </div>
 </div>
 
-<!--bootstrap end-->
+<div class="page-header">
+    <h2><i class="fa fa-chain Gy-icon-left"></i>ToolTip
+        <small>this section is just to show how to use Tooltip</small>
+    </h2>
+</div>
 
+<div role="alert" class="alert alert-warning">
+    there is a problem when I use the <code>tooltip.js</code> with angular directly.
+    you can solve this by visit the website
+    <a href="https://stackoverflow.com/users/login?ssrc=head&returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f20666900%2fusing-bootstrap-tooltip-with-angularjs\">
+        stackoverflow
+    </a>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-4">
+        <pre>
+           &lt;button type="button"
+                class="btn btn-default"
+                data-toggle="tooltip"
+                data-placement="left"
+                title="Tooltip on left"&gt;
+                Tooltip on left
+            &lt;/button&gt;
+        </pre>
+    </div>
+
+    <div class="col-xs-12 col-md-4">
+        <pre>
+           &lt;a href="#"
+                class="tooltip-test"
+                data-toggle="tooltip"
+                title="default Tooltip"
+                tooltip&gt;
+                default Tooltip.
+            &lt;/a&gt;
+        </pre>
+    </div>
+
+    <div class="col-xs-12 col-md-4">
+        <pre>
+            $(function () {
+                $("[data-toggle='tooltip']").tooltip();
+                    });
+        </pre>
+    </div>
+
+</div>
+
+<div class="alert alert-info" role="alert">
+    if I use the code above,there will no a tooltip show up! it is because the conflict between <code>angular</code> and <code>bootstrap</code> !
+     &nbsp;and I solve the problem with two ways.
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <p class="text-center">easy solution</p>
+        <pre>
+            //add <oode>onmouseenter</oode> attribution on the element
+            onmouseenter="$(this).tooltip('show')"
+
+            //use example
+            &lt;button type="button"
+                onmouseenter="$(this).tooltip('show')"
+                class="btn btn-default"
+                data-toggle="tooltip"
+                data-placement="right"
+                title="Tooltip on right"&gt;
+            Tooltip on right
+            &lt;/button&gt;
+
+            //effect
+
+            <button type="button" onmouseenter="$(this).tooltip('show')" class="btn btn-sm btn-default" data-toggle="tooltip"
+                    data-placement="right" title="Tooltip on right">Tooltip on right
+            </button>
+
+            <button type="button" onmouseenter="$(this).tooltip('show')" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+
+            <button type="button" onmouseenter="$(this).tooltip('show')" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+
+            <button type="button" onmouseenter="$(this).tooltip('show')" class="btn btn-sm btn-warning" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+        </pre>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <p class="text-center">custom directive</p>
+        <pre>
+            // you can custom your directive
+            myApp.directive('tooltip', function(){
+                return {
+                    restrict: 'A',
+                    link: function(scope, element, attrs){
+                        $(element).hover(function(){
+                            // on mouseenter
+                            $(element).tooltip('show');
+                        }, function(){
+                            // on mouseleave
+                            $(element).tooltip('hide');
+                        });
+                    }
+                };
+                });
+            // you can use this like this
+            &lt;a href="#"
+                class="tooltip-test"
+                data-toggle="tooltip"
+                title="default Tooltip" tooltip&gt;
+                default Tooltip
+            &lt;/a&gt;
+
+            <a href="#" class="tooltip-test" data-toggle="tooltip" title="default Tooltip" tooltip>default Tooltip</a>.
+        </pre>
+    </div>
+</div>
+
+
+
+<!--bootstrap end-->
 
 <!-- Alert Modal -->
 <div class="modal fade" id="myAlertModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
