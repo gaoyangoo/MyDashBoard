@@ -1,7 +1,7 @@
 .navbar-default{
-    /*border-color: rgba(0,0,0,.0001);*/
-    position: absolute;
+    border-color: rgba(0,0,0,.0001);
     background-color: #1fa67a;
+    box-shadow: 0px 1px 7px #000;
 }
 .navbar-default .navbar-header .navbar-brand strong{
     font-size: 20px;
@@ -97,4 +97,24 @@ footer ul li{
     margin-left: 20px;
     font-size:40px;
     list-style: none;
+}
+
+.form-group{
+    position: relative;
+}
+.input-error{
+    border:1px solid red;
+}
+.input-success{
+    border:1px solid green;
+}
+.checked{
+    position: absolute;
+    top:35px;
+    right:14px;
+}
+.unchecked{
+    position: absolute;
+    top:35px;
+    right:15px;
 }
