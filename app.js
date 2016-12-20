@@ -1,18 +1,5 @@
 var myApp=angular.module("Daniella",["ui.router"]);
 
-function getCookie(name)
-{
-    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-    if(arr=document.cookie.match(reg))
-        return unescape(arr[2]);
-    else
-        return null;
-}
-window.onload=function(){
-    var isSignIn=getCookie("isLogin");
-    console.log(isSignIn);
-    if(!isSignIn){
-        console.log("you did not sign in the system");
-        window.location.href="views/login.html"
-    }
-};
+myApp.run(function($rootScope){
+   $rootScope.isLogin=false;
+});

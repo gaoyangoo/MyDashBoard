@@ -1,18 +1,3 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>sign in github</title>
-
-    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../libs/bootstrap/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/login.css">
-
-</head>
-<body ng-app="loginModule">
-
 <div class="container-fluid">
     <!--header start-->
     <div class="row">
@@ -24,7 +9,7 @@
 
     <div class="row">
         <!--left content start-->
-        <div class="col-xs-3 col-xs-offset-3">
+        <div class="col-md-3 col-md-offset-3 col-xs-8 col-xs-offset-2">
             <h2><strong>Alex</strong> <i class="fa fa-circle-o-notch"></i> <strong>Snow</strong></h2>
             <br>
             <code> &lt;/Gy-Blog&gt;</code>
@@ -54,7 +39,7 @@
 
         <!--right content start-->
         <!-- form start-->
-        <div class="col-xs-3 col-xs-offset-1">
+        <div class="col-md-3 col-md-offset-1 col-xs-8 col-xs-offset-2">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="panel panel-default">
@@ -69,7 +54,6 @@
                             <form ng-controller="loginCtrl">
                                 <div class="form-group">
                                     <label class="col-xs-2">Email</label>
-                                    {{user.email}}
                                     <input type="email" class="form-control" ng-model="user.email">
                                 </div>
                                 <div class="form-group">
@@ -133,14 +117,3 @@
 
     <!--footer end-->
 </div>
-
-
-<script src="../libs/bootstrap/js/jquery-3.1.1.min.js"></script>
-<script src="../libs/bootstrap/js/bootstrap.min.js"></script>
-<script src="../libs/angular/angular.min.js"></script>
-
-<script src="../controller/loginCtrl.js"></script>
-<script src="../services/loginService.js"></script>
-
-</body>
-</html>
