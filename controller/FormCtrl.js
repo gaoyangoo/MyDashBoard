@@ -1,7 +1,7 @@
 /**
  * Created by gy on 2016/12/20.
  */
-myApp.controller("FormCtrl",function($scope,userService){
+myApp.controller("FormCtrl",function($scope,$timeout,userService){
     $scope.user = userService.getCurrentUser();
     $scope.degrees=[
         {id:1,name:"master"},
@@ -10,6 +10,12 @@ myApp.controller("FormCtrl",function($scope,userService){
     ];
     $scope.removePassword=function(){
         $scope.user.password=null;
-    }
+    };
+    $timeout(function(){
+        $scope.$watch("watchedValue",function(){
+            console.log("data changed !");
+        });
+    },2000);
+
 
 });
