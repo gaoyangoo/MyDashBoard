@@ -1,7 +1,6 @@
 /**
  * Created by gy on 2016/12/20.
  */
-
 function getCookie(name)
 {
     var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
@@ -10,12 +9,3 @@ function getCookie(name)
     else
         return null;
 }
-
-window.onload=function(){
-    var isSignIn=getCookie("isLogin");
-    console.log(isSignIn);
-    if(!isSignIn){
-        console.log("you did not sign in the system");
-        window.location.href="views/login.html"
-    }
-};
