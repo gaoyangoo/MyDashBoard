@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/login.css">
 
 </head>
-<body>
+<body ng-app="loginModule">
 
 <div class="container-fluid">
     <!--header start-->
@@ -66,14 +66,15 @@
                         </div>
                         <div class="panel-body">
                             <!--sign in-->
-                            <form class="form">
+                            <form ng-controller="loginCtrl">
                                 <div class="form-group">
                                     <label class="col-xs-2">Email</label>
-                                    <input type="email" class="form-control">
+                                    {{user.email}}
+                                    <input type="email" class="form-control" ng-model="user.email">
                                 </div>
                                 <div class="form-group">
                                     <label class="col-xs-2">Password</label>
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" ng-model="user.password">
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-xs-6 text-left">
@@ -89,7 +90,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <button class="btn btn-success col-xs-12">sign in</button>
+                                    <button class="btn btn-success col-xs-12" ng-click="login()">sign in</button>
                                 </div>
                             </form>
                         </div>
@@ -138,6 +139,8 @@
 <script src="../libs/bootstrap/js/bootstrap.min.js"></script>
 <script src="../libs/angular/angular.min.js"></script>
 
-<script src="../app.js"></script>
+<script src="../controller/loginCtrl.js"></script>
+<script src="../services/loginService.js"></script>
+
 </body>
 </html>
