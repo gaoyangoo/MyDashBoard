@@ -8,14 +8,71 @@
     </div>
 </div>
 <!--separator end-->
-
-<div class="row">
-    <div class="col-xs-12">
-        <div class="page-header">
-            <h2><i class="fa fa-chain Gy-icon-left"></i> Directives
-                <small>this section is just to show how to use directive</small>
-            </h2>
+<div class="page-header">
+    <h2><i class="fa fa-chain Gy-icon-left"></i> Directives
+        <small>this section is just to show how to use directive</small>
+    </h2>
+</div>
+<div class="row" ng-controller="FormCtrl">
+    <div class="col-md-4 col-xs-12">
+        <div class="row">
+            <div class="col-xs-12">
+                <div click-label
+                     class="click-label"
+                     ng-repeat="f in fruits"
+                     selected="f.selected"
+                     label-name="{{f.name}}"
+                     order={{f.id}}>
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <input type="checkbox" id="selectAll" ng-model="checkbox.value"> <label for="selectAll">{{checkbox.name}}</label>
+            </div>
+            <div class="col-xs-6">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-5 col-xs-12">
+        <table class="table table-striped table-hover">
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>state</td>
+                <td>selected</td>
+                <td>color</td>
+            </tr>
+            <tr ng-repeat="f in fruits">
+                <td ng-bind="f.id"></td>
+                <td ng-bind="f.name"></td>
+                <td ng-bind="f.selected"></td>
+                <td>
+                    <!--<select class="form-control" ng-model="f.selected" ng-options="x for x in [true,false]">-->
+                    <!--</select>-->
+                    <input type="checkbox" ng-model="f.selected">
+                </td>
+                <td><i class="fa fa-circle text-right" style="color: {{color[$index]}}"></i></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-3 col-xs-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    Fruit List for You
+                </div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="f in fruits | filter:{selected:true}">
+                    {{f.name}}<i class="fa fa-circle text-right" style="color: {{color[$index]}};float: right;"></i>
+                </li>
+            </ul>
+
+        </div>
+
     </div>
 </div>
 <div class="page-header">
