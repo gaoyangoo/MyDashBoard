@@ -170,13 +170,89 @@
 
     <pre class="col-xs-6">
         <xmp>
+            //watch a simple model
             $scope.$watch("watchedValue",function(){
             console.log("data changed !");
             });
+            //watch an object
+            $scope.$watch(function () {
+                return JSON.stringify($scope.fruits);
+                },
+                function () {
+                    $scope.checkbox.count = 0;
+                    angular.forEach($scope.fruits, function (data) {
+                        if (data.selected == true) {
+                            $scope.checkbox.count = $scope.checkbox.count + 1;
+                        }
+                    });
+                    if ($scope.checkbox.maxCount == $scope.checkbox.count) {
+                        $scope.checkbox.value = true;
+                    }
+                });
         </xmp>
     </pre>
 
 </div>
+
+<div class="page-header">
+    <h2><i class="fa fa-chain Gy-icon-left"></i>Filter
+        <small>this section is just summarize how to use <code>Filter</code> of angular</small>
+    </h2>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12 col-md-8">
+        <div class="row">
+            <div class="col-xs-12 form-group">
+                <input type="text" class="form-control" placeholder="search" ng-model="searchWord">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <table class="table table-hover table-striped" ng-controller="FormCtrl">
+                    <tbody>
+                    <tr>
+                        <th>index</th>
+                        <th>Name</th>
+                        <th>Birth-be</th>
+                        <th>Birth-af</th>
+                        <th>salary-be</th>
+                        <th>salary-af</th>
+                        <th>degree</th>
+                    </tr>
+                    <tr ng-repeat="item in users | filter:searchWord | orderBy:'[name,salary]':false">
+                        <td><i class="fa fa-circle Gy-icon-size" style="color:{{color[$index]}}"></i></td>
+                        <td ng-bind="item.name"></td>
+                        <td ng-bind="item.birth"></td>
+                        <td ng-bind="item.birth | date:'yyyy/MM/dd'"></td>
+                        <td ng-bind="item.salary"></td>
+                        <td ng-bind="item.salary | currency:'$':0"></td>
+                        <td ng-bind="item.degree"></td>
+                    </tr>
+                    </tbody>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <ul class="list-group">
+            <li class="list-group-item"><span class="badge">Format</span><code>expression | currency </code></li>
+            <li class="list-group-item"><span class="badge">Format</span><code>expression | currency: '￥':1 </code></li>
+            <li class="list-group-item"><span class="badge">Format</span><code>expression | date: 'yyyy/MM/dd'</code></li>
+            <li class="list-group-item"><span class="badge">Format</span><code>expression | uppercase</code></li>
+            <li class="list-group-item"><span class="badge">Format</span><code>expression | lowercase</code></li>
+            <li class="list-group-item"><span class="badge">Array</span><code>expression | filter:"value"</code></li>
+            <li class="list-group-item"><span class="badge">Object</span><code>expression | filter:"{prop:value}"</code></li>
+            <li class="list-group-item"><span class="badge">Object</span><code>expression | limitTo:2</code></li>
+            <li class="list-group-item"><span class="badge">Object</span><code>expression | orderBy:'[prop1,-prop2]':true</code></li>
+
+        </ul>
+    </div>
+</div>
+
 
 
 

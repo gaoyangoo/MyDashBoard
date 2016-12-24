@@ -3,15 +3,13 @@
  */
 myApp.controller("FormCtrl", function ($scope, $timeout, userService, randomColor) {
     $scope.user = userService.getCurrentUser();
+    $scope.users=userService.getUsers();
+
     $scope.degrees = [
         {id: 1, name: "master"},
         {id: 2, name: "phd"},
         {id: 3, name: "professor"}
     ];
-    $scope.removePassword = function () {
-        $scope.user.password = null;
-    };
-
     $scope.fruits = [
         {id: 1, name: "peach", selected: false},
         {id: 2, name: "apple", selected: false},
@@ -20,13 +18,20 @@ myApp.controller("FormCtrl", function ($scope, $timeout, userService, randomColo
         {id: 5, name: "grape", selected: true},
         {id: 6, name: "watermelon", selected: false}
     ];
-    $scope.color = randomColor.getColor($scope.fruits.length);
     $scope.checkbox = {
         value: false,
         name: 'All',
         count: 0,
         maxCount: $scope.fruits.length
     };
+
+
+    $scope.removePassword = function () {
+        $scope.user.password = null;
+    };
+
+    $scope.color = randomColor.getColor($scope.fruits.length);
+
     $scope.$watch(function () {
             return JSON.stringify($scope.fruits);
         },
@@ -42,7 +47,6 @@ myApp.controller("FormCtrl", function ($scope, $timeout, userService, randomColo
             }
         });
     $scope.$watch('checkbox.value', function () {
-        console.log($scope.checkbox.value);
         if ($scope.checkbox.value) {
             angular.forEach($scope.fruits, function (data) {
                 data.selected = true;
