@@ -19,6 +19,10 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('springboot',{
             url:"/springboot",
             templateUrl:"views/SpringBootPages/Gy-springboot.html"
+        })
+        .state('echarts',{
+            url:"/echarts",
+            templateUrl:"views/Echarts/visualData.html"
         });
 
 });
