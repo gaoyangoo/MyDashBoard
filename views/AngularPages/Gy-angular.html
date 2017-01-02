@@ -1,258 +1,258 @@
 <!--angular start-->
 <!--separator start-->
-<div class="row">
-    <div class="col-xs-12">
-        <div class="Gy-paragraph-separator">
-            Angular
+<div ng-controller="angularPageCtrl" ng-init="init()">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="Gy-paragraph-separator">
+                Angular
+            </div>
         </div>
     </div>
-</div>
-<!--separator end-->
-<div class="page-header">
-    <h2><i class="fa fa-chain Gy-icon-left"></i> Directives
-        <small>this section is just to show how to use directive</small>
-    </h2>
-</div>
-<div class="row" ng-controller="FormCtrl">
-    <div class="col-md-4 col-xs-12">
-        <div class="row">
-            <div class="col-xs-12">
-                <div click-label
-                     class="click-label"
-                     ng-repeat="f in fruits"
-                     selected="f.selected"
-                     label-name="{{f.name}}"
-                     order={{f.id}}>
+    <!--separator end-->
+    <div class="page-header">
+        <h2><i class="fa fa-chain Gy-icon-left"></i> Directives
+            <small>this section is just to show how to use directive</small>
+        </h2>
+    </div>
+    <div class="row" ng-controller="FormCtrl">
+        <div class="col-md-4 col-xs-12">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div click-label
+                         class="click-label"
+                         ng-repeat="f in fruits"
+                         selected="f.selected"
+                         label-name="{{f.name}}"
+                         order={{f.id}}>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6">
-                <input type="checkbox" id="selectAll" ng-model="checkbox.value"> <label for="selectAll">{{checkbox.name}}</label>
-            </div>
-            <div class="col-xs-6">
-            </div>
-        </div>
-
-    </div>
-
-    <div class="col-md-5 col-xs-12">
-        <table class="table table-striped table-hover">
-            <tr>
-                <td>id</td>
-                <td>name</td>
-                <td>state</td>
-                <td>selected</td>
-                <td>color</td>
-            </tr>
-            <tr ng-repeat="f in fruits">
-                <td ng-bind="f.id"></td>
-                <td ng-bind="f.name"></td>
-                <td ng-bind="f.selected"></td>
-                <td>
-                    <!--<select class="form-control" ng-model="f.selected" ng-options="x for x in [true,false]">-->
-                    <!--</select>-->
-                    <input type="checkbox" ng-model="f.selected">
-                </td>
-                <td><i class="fa fa-circle text-right" style="color: {{color[$index]}}"></i></td>
-            </tr>
-        </table>
-    </div>
-    <div class="col-md-3 col-xs-12">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <div class="panel-title text-center">
-                    Fruit List for You
+            <div class="row">
+                <div class="col-xs-6">
+                    <input type="checkbox" id="selectAll" ng-model="checkbox.value"> <label for="selectAll">{{checkbox.name}}</label>
+                </div>
+                <div class="col-xs-6">
                 </div>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="f in fruits | filter:{selected:true}">
-                    {{f.name}}<i class="fa fa-circle text-right" style="color: {{color[$index]}};float: right;"></i>
-                </li>
-            </ul>
 
         </div>
 
-    </div>
-</div>
-<div class="page-header">
-    <h2><i class="fa fa-chain Gy-icon-left"></i>Custom Form
-        <small>this section is just show a custom form</small>
-    </h2>
-</div>
-<div class="row" ng-controller="FormCtrl">
-    <div class="col-xs-12 col-md-6">
-        <form name="Form">
-            <div class="form-group">
-                <label>Email</label>
-                <input ng-model="user.email" type="email" name="email"
-                       class="form-control" placeholder="input your email"
-                       ng-class="{'input-error':Form.email.$invalid && Form.email.$touched,'input-success':Form.email.$valid}"
-                       required>
-                <i class="fa fa-check checked text-success" ng-if="Form.email.$valid"></i>
-                <i class="fa fa-remove unchecked text-danger" ng-if="Form.email.$invalid"></i>
-                <small class="text-danger" ng-if="Form.email.$invalid && Form.email.$touched">please enter a valid
-                    email
-                </small>
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" placeholder="input your password"
-                       ng-model="user.password"
-                       name="password"
-                       required
-                       ng-disabled="Form.email.$invalid && Form.email.$touched">
-                <i class="fa fa-remove unchecked" ng-click="removePassword()"></i>
-            </div>
-            <div class="form-group">
-                <label>Degree</label>
-                <select name="degree" class="form-control"
-                        required
-                        ng-disabled="Form.email.$invalid"
-                        ng-model="user.degree.id"
-                        ng-options="item.id as item.name for item in degrees"
-                >
-                </select>
-            </div>
-            <button class="btn btn-primary" ng-disabled="Form.$invalid">submit</button>
-        </form>
-    </div>
-    <div class="col-xs-12 col-md-6">
-        <pre>
-           <xmp>
-              <div class="form-group">
-                <label>Email</label>
-                <input ng-model="user.email" type="email" name="email"
-                       class="form-control" placeholder="input your email"
-                       ng-class="{'input-error':Form.email.$invalid &&
-                       Form.email.$touched,'input-success':Form.email.$valid}"
-                       required>
-                <i class="fa fa-check checked text-success"
-                   ng-if="Form.email.$valid"></i>
-                <i class="fa fa-remove unchecked text-danger"
-                   ng-if="Form.email.$invalid"></i>
-                <small class="text-danger" ng-if="Form.email.$invalid && Form.email.$touched">
-                    please enter a valid email
-                </small>
-            </div>
-           </xmp>
-        </pre>
-    </div>
-</div>
+        <div class="col-md-5 col-xs-12">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <td>id</td>
+                    <td>name</td>
+                    <td>state</td>
+                    <td>selected</td>
+                    <td>color</td>
+                </tr>
+                <tr ng-repeat="f in fruits">
+                    <td ng-bind="f.id"></td>
+                    <td ng-bind="f.name"></td>
+                    <td ng-bind="f.selected"></td>
+                    <td>
+                        <!--<select class="form-control" ng-model="f.selected" ng-options="x for x in [true,false]">-->
+                        <!--</select>-->
+                        <input type="checkbox" ng-model="f.selected">
+                    </td>
+                    <td><i class="fa fa-circle text-right" style="color: {{color[$index]}}"></i></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title text-center">
+                        Fruit List for You
+                    </div>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="f in fruits | filter:{selected:true}">
+                        {{f.name}}<i class="fa fa-circle text-right" style="color: {{color[$index]}};float: right;"></i>
+                    </li>
+                </ul>
 
-<div class="row">
-    <div class="col-xs-12 col-md-6">
-        <form>
-            <div class="form-group">
-                <label>password</label>
-                <input type="password" class="form-control">
             </div>
-            <div class="form-group">
-                <label>again</label>
-                <input type="password" class="form-control">
-            </div>
-        </form>
+
+        </div>
     </div>
-    <div class="col-xs-12 col-md-6"></div>
-</div>
-
-<div class="page-header">
-    <h2><i class="fa fa-chain Gy-icon-left"></i> $watch()
-        <small>this section is just show how to use <code>$watch()</code></small>
-    </h2>
-</div>
-<div class="row">
-
-    <div class="col-xs-6">
-        <input type="text" ng-model="watchedValue" class="form-control">
+    <div class="page-header">
+        <h2><i class="fa fa-chain Gy-icon-left"></i>Custom Form
+            <small>this section is just show a custom form</small>
+        </h2>
+    </div>
+    <div class="row" ng-controller="FormCtrl">
+        <div class="col-xs-12 col-md-6">
+            <form name="Form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input ng-model="user.email" type="email" name="email"
+                           class="form-control" placeholder="input your email"
+                           ng-class="{'input-error':Form.email.$invalid && Form.email.$touched,'input-success':Form.email.$valid}"
+                           required>
+                    <i class="fa fa-check checked text-success" ng-if="Form.email.$valid"></i>
+                    <i class="fa fa-remove unchecked text-danger" ng-if="Form.email.$invalid"></i>
+                    <small class="text-danger" ng-if="Form.email.$invalid && Form.email.$touched">please enter a valid
+                        email
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="input your password"
+                           ng-model="user.password"
+                           name="password"
+                           required
+                           ng-disabled="Form.email.$invalid && Form.email.$touched">
+                    <i class="fa fa-remove unchecked" ng-click="removePassword()"></i>
+                </div>
+                <div class="form-group">
+                    <label>Degree</label>
+                    <select name="degree" class="form-control"
+                            required
+                            ng-disabled="Form.email.$invalid"
+                            ng-model="user.degree.id"
+                            ng-options="item.id as item.name for item in degrees"
+                            >
+                    </select>
+                </div>
+                <button class="btn btn-primary" ng-disabled="Form.$invalid">submit</button>
+            </form>
+        </div>
+        <div class="col-xs-12 col-md-6">
+        <pre class="prettyprint linenums"><xmp>
+<div class="form-group">
+    <label>Email</label>
+    <input ng-model="user.email" type="email" name="email"
+           class="form-control" placeholder="input your email"
+           ng-class="{'input-error':Form.email.$invalid &&
+           Form.email.$touched,'input-success':Form.email.$valid}"
+           required>
+    <i class="fa fa-check checked text-success"
+       ng-if="Form.email.$valid"></i>
+    <i class="fa fa-remove unchecked text-danger"
+       ng-if="Form.email.$invalid"></i>
+    <small class="text-danger" ng-if="Form.email.$invalid && Form.email.$touched">
+        please enter a valid email
+    </small>
+</div></xmp> </pre>
+        </div>
     </div>
 
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <form>
+                <div class="form-group">
+                    <label>password</label>
+                    <input type="password" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>again</label>
+                    <input type="password" class="form-control">
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-12 col-md-6"></div>
+    </div>
 
-    <pre class="col-xs-6">
-        <xmp>
-            //watch a simple model
-            $scope.$watch("watchedValue",function(){
-            console.log("data changed !");
-            });
-            //watch an object
-            $scope.$watch(function () {
-                return JSON.stringify($scope.fruits);
-                },
-                function () {
-                    $scope.checkbox.count = 0;
-                    angular.forEach($scope.fruits, function (data) {
-                        if (data.selected == true) {
-                            $scope.checkbox.count = $scope.checkbox.count + 1;
-                        }
-                    });
-                    if ($scope.checkbox.maxCount == $scope.checkbox.count) {
-                        $scope.checkbox.value = true;
-                    }
-                });
-        </xmp>
+    <div class="page-header">
+        <h2><i class="fa fa-chain Gy-icon-left"></i> $watch()
+            <small>this section is just show how to use <code>$watch()</code></small>
+        </h2>
+    </div>
+    <div class="row">
+
+        <div class="col-xs-6">
+            <input type="text" ng-model="watchedValue" class="form-control">
+        </div>
+
+
+    <pre class="col-xs-6 prettyprint linenums">
+//watch a simple model
+$scope.$watch("watchedValue",function(){
+console.log("data changed !");
+});
+//watch an object
+$scope.$watch(function () {
+    return JSON.stringify($scope.fruits);
+    },
+    function () {
+        $scope.checkbox.count = 0;
+        angular.forEach($scope.fruits, function (data) {
+            if (data.selected == true) {
+                $scope.checkbox.count = $scope.checkbox.count + 1;
+            }
+        });
+        if ($scope.checkbox.maxCount == $scope.checkbox.count) {
+            $scope.checkbox.value = true;
+        }
+    });
     </pre>
 
-</div>
+    </div>
 
-<div class="page-header">
-    <h2><i class="fa fa-chain Gy-icon-left"></i>Filter
-        <small>this section is just summarize how to use <code>Filter</code> of angular</small>
-    </h2>
-</div>
+    <div class="page-header">
+        <h2><i class="fa fa-chain Gy-icon-left"></i>Filter
+            <small>this section is just summarize how to use <code>Filter</code> of angular</small>
+        </h2>
+    </div>
 
 
-<div class="row">
-    <div class="col-xs-12 col-md-8">
-        <div class="row">
-            <div class="col-xs-12 form-group">
-                <input type="text" class="form-control" placeholder="search" ng-model="searchWord">
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    <input type="text" class="form-control" placeholder="search" ng-model="searchWord">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <table class="table table-hover table-striped" ng-controller="FormCtrl">
+                        <tbody>
+                        <tr>
+                            <th>index</th>
+                            <th>Name</th>
+                            <th>Birth-be</th>
+                            <th>Birth-af</th>
+                            <th>salary-be</th>
+                            <th>salary-af</th>
+                            <th>degree</th>
+                        </tr>
+                        <tr ng-repeat="item in users | filter:searchWord | orderBy:'[name,salary]':false">
+                            <td><i class="fa fa-circle Gy-icon-size" style="color:{{color[$index]}}"></i></td>
+                            <td ng-bind="item.name"></td>
+                            <td ng-bind="item.birth"></td>
+                            <td ng-bind="item.birth | date:'yyyy/MM/dd'"></td>
+                            <td ng-bind="item.salary"></td>
+                            <td ng-bind="item.salary | currency:'$':0"></td>
+                            <td ng-bind="item.degree"></td>
+                        </tr>
+                        </tbody>
+
+
+                    </table>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <table class="table table-hover table-striped" ng-controller="FormCtrl">
-                    <tbody>
-                    <tr>
-                        <th>index</th>
-                        <th>Name</th>
-                        <th>Birth-be</th>
-                        <th>Birth-af</th>
-                        <th>salary-be</th>
-                        <th>salary-af</th>
-                        <th>degree</th>
-                    </tr>
-                    <tr ng-repeat="item in users | filter:searchWord | orderBy:'[name,salary]':false">
-                        <td><i class="fa fa-circle Gy-icon-size" style="color:{{color[$index]}}"></i></td>
-                        <td ng-bind="item.name"></td>
-                        <td ng-bind="item.birth"></td>
-                        <td ng-bind="item.birth | date:'yyyy/MM/dd'"></td>
-                        <td ng-bind="item.salary"></td>
-                        <td ng-bind="item.salary | currency:'$':0"></td>
-                        <td ng-bind="item.degree"></td>
-                    </tr>
-                    </tbody>
+        <div class="col-xs-12 col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item"><span class="badge">Format</span><code>expression | currency </code></li>
+                <li class="list-group-item"><span class="badge">Format</span><code>expression | currency: '￥':1 </code>
+                </li>
+                <li class="list-group-item"><span class="badge">Format</span><code>expression | date:
+                    'yyyy/MM/dd'</code></li>
+                <li class="list-group-item"><span class="badge">Format</span><code>expression | uppercase</code></li>
+                <li class="list-group-item"><span class="badge">Format</span><code>expression | lowercase</code></li>
+                <li class="list-group-item"><span class="badge">Array</span><code>expression | filter:"value"</code>
+                </li>
+                <li class="list-group-item"><span class="badge">Object</span><code>expression |
+                    filter:"{prop:value}"</code></li>
+                <li class="list-group-item"><span class="badge">Object</span><code>expression | limitTo:2</code></li>
+                <li class="list-group-item"><span class="badge">Object</span><code>expression |
+                    orderBy:'[prop1,-prop2]':true</code></li>
 
-
-                </table>
-            </div>
+            </ul>
         </div>
     </div>
-    <div class="col-xs-12 col-md-4">
-        <ul class="list-group">
-            <li class="list-group-item"><span class="badge">Format</span><code>expression | currency </code></li>
-            <li class="list-group-item"><span class="badge">Format</span><code>expression | currency: '￥':1 </code></li>
-            <li class="list-group-item"><span class="badge">Format</span><code>expression | date: 'yyyy/MM/dd'</code></li>
-            <li class="list-group-item"><span class="badge">Format</span><code>expression | uppercase</code></li>
-            <li class="list-group-item"><span class="badge">Format</span><code>expression | lowercase</code></li>
-            <li class="list-group-item"><span class="badge">Array</span><code>expression | filter:"value"</code></li>
-            <li class="list-group-item"><span class="badge">Object</span><code>expression | filter:"{prop:value}"</code></li>
-            <li class="list-group-item"><span class="badge">Object</span><code>expression | limitTo:2</code></li>
-            <li class="list-group-item"><span class="badge">Object</span><code>expression | orderBy:'[prop1,-prop2]':true</code></li>
 
-        </ul>
-    </div>
 </div>
-
-
-
 

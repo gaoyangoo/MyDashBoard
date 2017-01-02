@@ -1,5 +1,8 @@
 
-<div class="container-fluid" ng-controller="echartsCtrl" ng-init="init()">
+<div ng-controller="echartsCtrl" ng-init="init()">
+    <div class="page-header">
+        <h2>Echarts <small>this section is just to show how to use Echart</small></h2>
+    </div>
     <div class="row">
         <div class="col-xs-12 col-md-6">
             <div class="part" id="echart-part1">
@@ -10,4 +13,54 @@
             <div class="part" id="echart-part2"></div>
         </div>
     </div>
+
+    <div class="page-header">
+        <h2>Code</h2>
+    </div>
+
+    <pre class="prettyprint linenums">
+var part1Dom = document.getElementById("echart-part1");
+var part1Echart=echarts.init(part1Dom);
+var option1 = {
+    tooltip: {
+        show: true
+    },
+    legend: {
+        data: ['销量']
+    },
+    xAxis: [
+        {
+            type: 'category',
+            data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    series: [
+        {
+            "name": "销量",
+            "type": "bar",
+            "data": [5, 20, 40, 10, 10, 20]
+        }
+    ]
+};
+part1Echart.setOption(option1);
+            </pre>
+    <pre class="prettyprint linenums">
+public class Main{
+    public static void main(){
+        System.out.println("hello world");
+    }
+}
+</pre>
+    <pre class="prettyprint linenums">
+public class Main{
+    public static void main(){
+        System.out.println("hello world");
+    }
+}
+</pre>
 </div>
